@@ -1,0 +1,4 @@
+uwsgi.ini
+Dockerfile
+instance/
+**/__pycache__/

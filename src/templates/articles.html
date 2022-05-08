@@ -1,22 +1,13 @@
-<!doctype html>
+{% extends "base.html" %}
+{% block title %}Research{% endblock %}
+{% block content %}
 
-<html lang="en-us">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Articles</title>
-</head>
-
-<body>
-    {% for article in articles %}
-    <div class="article">
-        Title: {{ article['title'] }} <br />
-        Authors: {{ article['authors_string'] }} <br />
-        ArXiv: {{ article['arxiv'] }} <br />
-    </div>
-    <br />
-    {% endfor %}
-</body>
-
-</html>
+{% for article in articles %}
+<div class="article">
+    Title: {{ article['title'] }} <br />
+    Authors: {{ article['authors_string'] }} <br />
+    ArXiv: {{ article['arxiv'] }} <br />
+</div>
+<br />
+{% endfor %}
+{% endblock %}

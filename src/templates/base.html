@@ -14,21 +14,22 @@
 </head>
 
 <body>
-    <div id="header">
+    <header>
         <div class="nav-bar">
             <ul class="nav-links">
-                <li><a class="nav-links" href="/">Home</a></li>
-                <li><a class="nav-links" href="/software">Software</a></li>
-                <li><a class="nav-links" href="/research">Research</a></li>
-                <li><a class="nav-links" href="/about">About</a></li>
+                <li><a class="nav-link" href="/">Home</a></li>
+                <li><a class="nav-link" href="/software">Software</a></li>
+                <li><a class="nav-link" href="/research">Research</a></li>
+                <li><a class="nav-link" href="/about">About</a></li>
             </ul>
         </div>
-    </div>
+    </header>
 
-    <div id="content">
+    <main>
         {% block content %}{% endblock %}
-    </div>
-    <div id="footer">
+    </main>
+
+    <footer>
         {% block footer %}{% endblock %}
-    </div>
+    </footer>
 </body>

@@ -21,14 +21,8 @@ body {
     padding: 1em;
 }
 
-header {
-    border-bottom-width: 5px;
-    border-bottom-style: solid;
-    border-bottom-color: var(--color-dark);
-}
-
 main {
-    margin: 1.25em;
+    margin: 0;
 }
 
 .nav-bar {
@@ -37,6 +31,7 @@ main {
     justify-content: space-between;
     padding: 1em;
     background-color: var(--color-dark);
+    border-radius: 0.5em;
     color: var(--color-white);
 }
 
@@ -48,13 +43,6 @@ main {
 
 .nav-link {
     display: inline-block;
-}
-
-.title {
-    font-size: 2em;
-}
-
-.nav-links a {
     text-decoration: none;
     padding: 0.25em 0.5em;
     border-radius: 0.5em;
@@ -63,4 +51,60 @@ main {
 
 .nav-links a:hover {
     text-decoration: underline;
+}
+
+.title {
+    font-size: 2em;
+}
+
+article {
+    margin: 1em;
+    padding: 1em;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1em;
+    border-color: var(--color-dark);
+    overflow: hidden;
+}
+
+.article-left {
+    width: 80%;
+    float: left;
+}
+
+.article-title {
+    font-size: 1.4em;
+}
+
+.article-authors {
+    font-size: 0.9em;
+    margin: 0.25em 0 0.75em;
+}
+
+.article-image {
+    width: 20%;
+    padding: 0.5em;
+    float: right;
+}
+
+.article-image>img {
+    max-width: 100%;
+    display: block;
+}
+
+.article-abstract {
+    padding: 0.5em 0;
+}
+
+.article-footer {
+    clear: left;
+}
+
+.article-footer>a {
+    font-size: 0.9em;
+    color: blue;
+}
+
+.article-footer>a:not(:first-child) {
+    margin: 0 1em;
 }

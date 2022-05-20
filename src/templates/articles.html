@@ -3,11 +3,20 @@
 {% block content %}
 
 {% for article in articles %}
-<div class="article">
-    Title: {{ article['title'] }} <br />
-    Authors: {{ article['authors_string'] }} <br />
-    ArXiv: {{ article['arxiv'] }} <br />
-</div>
-<br />
+<article>
+    <div class="article-left">
+        <div class="article-title">{{ article['title'] }}</div>
+        <div class="article-authors">{{ article['authors_string'] }}</div>
+        <div class="article-abstract">{{ article['abstract'] }}</div>
+    </div>
+    <div class="article-image">
+        <img src="{{ url_for('static', filename=article['image']) }}" alt="alt text for universal 4" />
+    </div>
+    <div class="article-footer">
+        {% for text, link in article['links'] %}
+        <a href="{{ link }}">{{ text }}</a>
+        {% endfor %}
+    </div>
+</article>
 {% endfor %}
 {% endblock %}

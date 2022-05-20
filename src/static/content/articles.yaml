@@ -3,6 +3,14 @@
   - Michael Engen
   - Vincent Vatter
   type: article
+  abstract: |
+    Numerous versions of the question "what is the shortest object containing all permutations of a 
+    given length?" have been asked over the past fifty years: by Karp (via Knuth) in 1972; by 
+    Chung, Diaconis, and Graham in 1992; by Ashlock and Tillotson in 1993; and by Arratia in 1999. 
+    The large variety of questions of this form, which have previously been considered in 
+    isolation, stands in stark contrast to the dearth of answers. We survey and synthesize these 
+    questions and their partial answers, introduce infinitely more related questions, and then 
+    establish an improved upper bound for one of these questions. 
   arxiv: https://arxiv.org/abs/1810.08252
   journal:
     title: American Mathematical Monthly

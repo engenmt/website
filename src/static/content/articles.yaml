@@ -23,6 +23,15 @@
   - Michael Engen
   - Vincent Vatter
   type: article
+  abstract: |
+    Korpelainen, Lozin, and Razgon conjectured that a hereditary property of graphs which is 
+    well-quasi-ordered by the induced subgraph order and defined by only finitely many minimal 
+    forbidden induced subgraphs is labelled well-quasi-ordered, a notion stronger than that of 
+    n-well-quasi-order introduced by Pouzet in the 1970s. We present a counterexample to this 
+    conjecture. In fact, we exhibit a hereditary property of graphs which is well-quasi-ordered by 
+    the induced subgraph order and defined by finitely many minimal forbidden induced subgraphs yet 
+    is not 2-well-quasi-ordered. This counterexample is based on the widdershins spiral, which has 
+    received some study in the area of permutation patterns.
   arxiv: https://arxiv.org/abs/1709.10042
   journal: 
     title: Graphs and Combinatorics
@@ -35,6 +44,16 @@
   - Michael Engen
   - Jordan A. Miller
   type: article
+  abstract: |
+    We exhibit a bijection between recently-introduced combinatorial objects known as valid hook 
+    configurations and certain weighted set partitions. When restricting our attention to set 
+    partitions that are matchings, we obtain three new combinatorial interpretations of Lassalle's 
+    sequence. One of these interpretations involves permutations that have exactly one preimage 
+    under the (West) stack-sorting map. We prove that the sequences obtained by counting these 
+    permutations according to their first entries are symmetric, and we conjecture that they are 
+    log-concave. We also obtain new recurrence relations involving Lassalle's sequence and the 
+    sequence that enumerates valid hook configurations. We end with several suggestions for future 
+    work.
   arxiv: https://arxiv.org/abs/1809.01340
   journal: 
     title: Journal of Combinatorial Theory, Series A
@@ -48,6 +67,9 @@
   - Jay Pantone
   - Vincent Vatter
   type: article
+  abstract: |
+    We establish an exact formula for the length of the shortest permutation containing all layered 
+    permutations of length n, proving a conjecture of Gray.
   arxiv: https://arxiv.org/abs/1710.04240
   journal:
     title: The Electronic Journal of Combinatorics 
@@ -59,6 +81,13 @@
   - Michael Engen
   - Vincent Vatter
   type: article
+  abstract:
+    We characterize the downsets of integer partitions (ordered by containment of Ferrers diagrams) 
+    and compositions (ordered by the generalized subword order) which have finite dimension in the 
+    sense of Dushnik and Miller. In the case of partitions, while the set of all partitions has 
+    infinite dimension, we show that every proper downset of partitions has finite dimension. For 
+    compositions we identify four minimal downsets of infinite dimension and establish that every 
+    downset which does not contain one of these four has finite dimension.
   arxiv: https://arxiv.org/abs/1703.06960
   journal: 
     title: Australasian Journal of Combinatorics

@@ -1,0 +1,30 @@
+\documentclass[convert]{standalone}
+
+\input{universal.tex}
+
+\begin{document}
+\begin{tikzpicture}[lines]
+	\def\size{25}
+	
+	% Background, frame
+	\draw[draw=none] (-0.5,-0.5) rectangle ++({\size+2},{\size+2});
+	\draw (0.5,0.5) rectangle ++(\size,\size);
+
+	% Lines
+	\begin{scope}[shift={(0.5,0.5)}]
+		\foreach \y in {4,7,11,14,17,21} {
+			\draw[darkgray, thick] (0, \y) -- ++(\size, 0);
+			\draw[darkgray, thick] (\y, 0) -- ++(0, \size);
+		}
+	\end{scope}
+
+	% Points
+	\foreach \x/\y in {1/4, 2/11, 3/18, 4/25, 8/3, 9/10, 10/17, 11/24, 15/2, 16/9, 17/16, 18/23, 22/1, 23/8, 24/15, 25/22} {
+		\draw [fill=black] (\x,\y) circle (6pt);
+	}
+	\foreach \x/\y in {5/21, 6/14, 7/7, 12/20, 13/13, 14/6, 19/19, 20/12, 21/5} {
+		\draw (\x,\y) circle (6pt);
+	}
+	
+\end{tikzpicture}
+\end{document}

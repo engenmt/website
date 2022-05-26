@@ -81,6 +81,7 @@
   - Michael Engen
   - Vincent Vatter
   type: article
+  image: crowns.png
   abstract:
     We characterize the downsets of integer partitions (ordered by containment of Ferrers diagrams) 
     and compositions (ordered by the generalized subword order) which have finite dimension in the 

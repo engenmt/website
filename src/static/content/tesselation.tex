@@ -1,0 +1,105 @@
+\documentclass[convert={density=300, size=1000x1000, outext=.png}]{standalone}
+% \documentclass{standalone}
+
+% Tikz (also necessary):
+\usepackage{tikz}
+\usetikzlibrary{patterns, intersections}
+\usepackage{xparse} % Needed for \IfBooleanT (used in a Tikz macro).
+
+\newcommand\mybullet{\raisebox{-5pt}{\normalsize \ensuremath{\bullet}}}
+\newcommand\mycirc{\raisebox{-5pt}{\normalsize \ensuremath{\circ}}}
+
+\makeatletter
+\def\absdot{\@ifnextchar[{\@absdotlabel}{\@absdotnolabel}}
+  \def\@absdotlabel[#1]#2{%
+    \node at #2 {\normalsize \mybullet};
+    \node at #2 [below=2pt] {\ensuremath{#1}};
+  }
+  \def\@absdotnolabel#1{%
+    \node at #1 {\normalsize \mybullet};
+  }
+\def\absdothollow{\@ifnextchar[{\@absdothollowlabel}{\@absdothollownolabel}}
+  % Make a dot of fixed absolute size.
+  % Note that \absdothollow first overwrites what it is going on top of.
+  \def\@absdothollowlabel[#1]#2{%
+    \node at #2 {\normalsize \textcolor{white}{\mybullet}};
+    \node at #2 {\normalsize \mycirc};
+    \node at #2 [below=2pt] {\ensuremath{#1}};
+  }
+  \def\@absdothollownolabel#1{%
+    \node at #1 {\normalsize \textcolor{white}{\mybullet}};
+    \node at #1 {\normalsize \mycirc};
+  }
+\makeatother
+
+\begin{document}
+
+\NewDocumentCommand{\tilingshift}{ s m m }{
+  \begin{scope}[shift={(#2,#3)}]
+
+    \absdothollow{(0,0)}
+    \IfBooleanT#1%
+      {\node[anchor=north] at (0,0) {$(k,\ell)$};}
+  
+    \draw [white, line cap = round, fill = lightgray] 
+      (2,6) |- (4,5) |- (6,3) |- (7,2) |- cycle;
+    
+    \draw [dotted, thick, line cap = round] 
+      (2,6) |- (4,5) |- (6,3) |- (7,2);
+    \draw [thick, line cap = round] (7,2) |- (2,6);
+
+    \absdot{(2,6)}
+    \absdot{(4,5)}
+    \absdot{(6,3)} 
+    \absdot{(7,2)}
+    
+    \IfBooleanT#1%
+      {\node [above left] at (6.9,3.5) {$T_{k,\ell}$};}
+  \end{scope}
+}
+
+\begin{tikzpicture}[scale=0.34]
+
+  % \useasboundingbox (-1,-16.5) rectangle ++(44,44);
+  % \draw[rounded corners, fill=white, draw=black] (-1,-1) rectangle ++(44,13);
+
+  \useasboundingbox (-1,-9) rectangle ++(29,29);
+  \draw[rounded corners, fill=white, draw=black] (-1,-1) rectangle ++(29,13);
+  
+%   \draw[thick, <->] (0,11) -- (0,0) -- (12,0); % Axes
+
+%   \absdothollow{(3,2)}
+%   \node[anchor=north] at (3,2) {$(k,\ell)$};
+  
+%   \absdot{(5,8)}
+%   \absdot{(7,7)}
+%   \absdot{(9,5)} 
+%   \absdot{(10,4)}
+  
+%   \node[anchor=south] at (6,8) {$(k+\alpha_1-1,\ell+n-\beta_1)$};
+% %      \node[anchor=south west] at  (7,7) {$(k+\alpha_4-1,\ell+n-\beta_4)$};
+% %      \node[anchor=north east] at (9,5) {$(k+\alpha_4-1,\ell+n-\beta_4)$};
+%   \node[anchor=north] at (7,4) {$(k+\alpha_4-1,\ell+n-\beta_4)$};
+
+  % \begin{scope}[shift={(15,0)}]
+  \draw[thick, <->] (0,11) -- (0,0) -- (12,0);
+  \tilingshift*{3}{2}
+  % \end{scope}
+  \begin{scope}[shift={(30,0)}, transform canvas={scale=0.5}]
+      \draw[thick, <->] (0,22) -- (0,0) -- (24,0);
+      
+      \draw[dotted] ( 2,0) -- ( 2,22);
+      \draw[dotted] (11,0) -- (11,22);
+      \draw[dotted] (20,0) -- (20,22);
+      
+      \draw[dotted] (0, 1) -- (24, 1);
+      \draw[dotted] (0, 9) -- (24, 9);
+      \draw[dotted] (0,17) -- (24,17);
+      
+      \tilingshift{3}{2}
+      \tilingshift{3}{10}
+      \tilingshift{12}{2}
+      \tilingshift{12}{10}
+  \end{scope}
+\end{tikzpicture}
+\end{document}

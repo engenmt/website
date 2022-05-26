@@ -43,7 +43,7 @@ def get_articles():
 
         if "abstract" not in article:
             article["abstract"] = LOREM_IPSUM
-        if "image" not in article:
-            article["image"] = "images/universal-4.png"
+
+        article["image"] = f"content/{article.get('image', 'universal-4.png')}"
 
     return my_articles

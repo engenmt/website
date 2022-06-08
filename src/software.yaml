@@ -1,0 +1,10 @@
+- title: PermPy
+  authors: 
+  - Cheyne Homberger
+  - Michael Engen
+  - Jay Pantone
+  images:
+    small: universal-5.png
+  abstract: |
+    PermPy is an open-source Python library for generating and analyzing large combinatorial datasets.
+  link: http://permpy.com

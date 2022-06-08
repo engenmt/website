@@ -1,0 +1,14 @@
+\usepackage{tikz}
+\usepackage{ifthen}
+
+\newcommand{\HasseCrown}[2]{
+	\foreach \c [count=\i] in {#1} {
+		\node (\i0) at (\i,0) {$\c$};
+	};
+	\foreach \c [count=\i] in {#2} {
+		\node (\i1) at (\i,1) {$\c$};
+		\foreach \d [count=\j] in {#1} {
+			\ifthenelse{\i < \j \OR \i > \j}{\draw (\j0)--(\i1);}{}
+		};
+	};
+}

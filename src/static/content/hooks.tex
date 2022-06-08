@@ -33,18 +33,6 @@
 		\node at #1 {\normalsize \mytriangle};
 	}
 
-\newcommand{\arc}[2]{
-	\draw[thick] (#1,0) arc (180:0:{(#2-#1)/2});
-	\node at (#1,0) {\normalsize \ensuremath{\bullet}};
-	\node at (#2,0) {\normalsize \ensuremath{\bullet}};
-}
-
-\newcommand{\matching}[2][0]{
-	\foreach \i/\j in {#2} {
-		\arc{\i + #1}{\j + #1};
-	};
-}
-
 \makeatother
 %%%% Dot %%%%
 \newcommand\mybullet{\raisebox{-5pt}{\scalebox{1.5}{\normalsize \ensuremath{\bullet}}}}
@@ -120,7 +108,8 @@
 \begin{tikzpicture}[scale=0.35]
 	
 	% \useasboundingbox (-1,-1) rectangle (18,18);
-	\draw [fill=white, draw=none] (-1.2,-0.1) rectangle (17.2,17.3);
+	% \draw [fill=white, draw=none] (-1.2,-0.1) rectangle (17.2,17.3);
+	\draw [fill=white, draw=none] (-1.5,-0.4) rectangle (17.5,17.6);
 	\draw [lightgray] (0.5,0.5) grid ++(16,16);
 	
 	\def\firsthookcolor{blue}

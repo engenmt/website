@@ -33,6 +33,11 @@ def create_links(article):
     return links
 
 
+def choose_image(article):
+    images = article["images"]
+    return images.get("small", images.get("medium", images.get("large")))
+
+
 def get_articles():
     with current_app.open_resource("static/content/articles.yaml") as f:
         my_articles = yaml.load(f, Loader=yaml.Loader)
@@ -44,6 +49,8 @@ def get_articles():
         if "abstract" not in article:
             article["abstract"] = LOREM_IPSUM
 
-        article["image"] = f"content/{article.get('image', 'universal-4.png')}"
+        image = choose_image(article)
+
+        article["image"] = f"content/{image}"
 
     return my_articles

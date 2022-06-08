@@ -3,6 +3,9 @@
   - Michael Engen
   - Vincent Vatter
   type: article
+  images:
+    small: universal-5.png
+    medium: universal-6.png
   abstract: |
     Numerous versions of the question "what is the shortest object containing all permutations of a 
     given length?" have been asked over the past fifty years: by Karp (via Knuth) in 1972; by 
@@ -23,6 +26,10 @@
   - Michael Engen
   - Vincent Vatter
   type: article
+  images: 
+    small: widdershins-perm-3.png
+    medium: widdershins-perm-4.png
+    large: widdershins-graph.png
   abstract: |
     Korpelainen, Lozin, and Razgon conjectured that a hereditary property of graphs which is 
     well-quasi-ordered by the induced subgraph order and defined by only finitely many minimal 
@@ -44,6 +51,8 @@
   - Michael Engen
   - Jordan A. Miller
   type: article
+  images: 
+    large: hooks.png
   abstract: |
     We exhibit a bijection between recently-introduced combinatorial objects known as valid hook 
     configurations and certain weighted set partitions. When restricting our attention to set 
@@ -67,6 +76,10 @@
   - Jay Pantone
   - Vincent Vatter
   type: article
+  images: 
+    small: layerization-2.png
+    medium: layerization-3.png
+    large: layerization-4.png
   abstract: |
     We establish an exact formula for the length of the shortest permutation containing all layered 
     permutations of length n, proving a conjecture of Gray.
@@ -81,7 +94,10 @@
   - Michael Engen
   - Vincent Vatter
   type: article
-  image: crowns.png
+  images: 
+    small: crowns-3.png
+    medium: crowns-4.png
+    large: crowns-5.png
   abstract:
     We characterize the downsets of integer partitions (ordered by containment of Ferrers diagrams) 
     and compositions (ordered by the generalized subword order) which have finite dimension in the 

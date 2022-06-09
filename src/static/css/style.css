@@ -68,7 +68,7 @@ article {
 }
 
 .article-left {
-    width: 80%;
+    max-width: 80%;
     float: left;
 }
 
@@ -82,7 +82,7 @@ article {
 }
 
 .article-image {
-    width: 20%;
+    max-width: 20%;
     padding: 0.5em;
     float: right;
 }

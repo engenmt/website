@@ -13,9 +13,7 @@
         <img src="{{ url_for('static', filename=software['image']) }}" alt="Alt text." />
     </div>
     <div class="article-footer">
-        {%- for text, link in software['links'] %}
-        <a href="{{ link }}">{{ text }}</a>
-        {%- endfor %}
+        <a href="{{ software['link'] }}">{{ software['link'] }}</a>
     </div>
 </article>
 {% endfor %}

@@ -3,5 +3,6 @@
 instance/
 uwsgi.ini
 Dockerfile
+notes.yml
 log.txt
 .env

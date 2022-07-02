@@ -3,18 +3,17 @@ import json
 import sys
 
 
-from config import DevelopmentConfig, TestingConfig
-from src import create_app
+from .config import DevelopmentConfig, TestingConfig
+from .src import create_app
 
-
-if __name__ == "__main__":
+def run_app(env=None):
+    if env is None:
+        try:
+            env = sys.argv[1]
+        except IndexError:
+            env = "dev"
 
     app = create_app()
-
-    try:
-        env = sys.argv[1]
-    except IndexError:
-        env = "dev"
 
     match env:
         case "prod":
@@ -27,5 +26,9 @@ if __name__ == "__main__":
             app.config.from_object(TestingConfig)  # Enables debug-level logging
         case _:
             raise Exception(f"Invalid config!")
-        
+
     app.run(host="localhost", port=5000)
+
+if __name__ == "__main__":
+
+    run_app()

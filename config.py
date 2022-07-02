@@ -1,6 +1,14 @@
-import flask
+import json
 
-flask.cli.load_dotenv()
+# import flask
+
+# flask.cli.load_dotenv()
+
+
+def config():
+    with open("/etc/config.json") as config_file:
+        config = json.load(config_file)
+    return config
 
 
 class Config(object):
@@ -9,6 +17,7 @@ class Config(object):
 
 class ProductionConfig(Config):
     ENV = "production"
+    port = 8000
 
 
 class DevelopmentConfig(Config):

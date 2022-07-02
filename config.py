@@ -17,6 +17,7 @@ class Config(object):
 
 class ProductionConfig(Config):
     ENV = "production"
+    port = 8000
 
 
 class DevelopmentConfig(Config):

@@ -1,7 +1,8 @@
 import json
-import flask
 
-flask.cli.load_dotenv()
+# import flask
+
+# flask.cli.load_dotenv()
 
 
 def config():

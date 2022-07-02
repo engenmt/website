@@ -27,7 +27,7 @@ def run_app(env=None):
         case _:
             raise Exception(f"Invalid config!")
 
-    app.run(host="localhost", port=5000)
+    app.run(host="localhost", port=8000)
 
 if __name__ == "__main__":
 

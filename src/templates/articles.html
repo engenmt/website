@@ -12,6 +12,7 @@
     <div class="article-image">
         <img src="{{ url_for('static', filename=article['image']) }}" alt="alt text for universal 4" />
     </div>
+    <br class="clear" />
     <div class="article-footer">
         {%- for text, link in article['links'] %}
         <a href="{{ link }}">{{ text }}</a>

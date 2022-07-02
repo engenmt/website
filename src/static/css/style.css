@@ -65,11 +65,17 @@ article {
     border-radius: 1em;
     border-color: var(--color-dark);
     overflow: hidden;
+    /* position: relative; */
 }
 
 .article-left {
-    width: 80%;
+    max-width: 80%;
     float: left;
+    height: 100%;
+    /* display: flex;
+    flex-flow: column; */
+    display: grid;
+    grid-template-rows: min-content min-content auto min-content;
 }
 
 .article-title {
@@ -90,8 +96,8 @@ article {
 .article-image>img {
     max-width: 100%;
     display: block;
-    border: 2px solid var(--color-dark);
-    border-radius: 4px;
+    border: 0.125em solid var(--color-dark);
+    border-radius: 0.5em;
 }
 
 .article-abstract {
@@ -99,14 +105,17 @@ article {
 }
 
 .article-footer {
-    clear: left;
+    position: relative;
 }
 
 .article-footer>a {
-    font-size: 0.9em;
     color: blue;
 }
 
 .article-footer>a:not(:first-child) {
     margin: 0 1em;
+}
+
+.clear {
+    clear: both;
 }

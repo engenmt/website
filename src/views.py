@@ -1,5 +1,5 @@
 from flask import render_template, Blueprint
-from src.articles import get_articles
+from .articles import get_articles
 
 bp = Blueprint("views", __name__)
 

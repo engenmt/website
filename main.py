@@ -3,8 +3,8 @@ import json
 import sys
 
 
-from .config import ProductionConfig, DevelopmentConfig, TestingConfig
-from .src import create_app
+from config import ProductionConfig, DevelopmentConfig, TestingConfig
+from src import create_app
 
 def config_app(env=None):
     if env is None:

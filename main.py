@@ -4,8 +4,8 @@ import sys
 
 
 def create_app_prod():
-    from config import ProductionConfig
-    from src import create_app
+    from .config import ProductionConfig
+    from .src import create_app
 
     app = create_app()
 
@@ -13,13 +13,13 @@ def create_app_prod():
     with open("/etc/config.json", "r") as f:
         config = json.loads(f.read())
         app.config.from_object(config)
-    
+
     return app
 
 
 def create_app_dev(env=None):
-    from .config import DevelopmentConfig, TestingConfig
-    from .src import create_app
+    from config import DevelopmentConfig, TestingConfig
+    from src import create_app
 
     app = create_app()
 
@@ -30,12 +30,8 @@ def create_app_dev(env=None):
             app.config.from_object(TestingConfig)  # Enables debug-level logging
         case _:
             raise Exception(f"Invalid config!")
-    
+
     return app
-
-
-
-
 
 
 if __name__ == "__main__":

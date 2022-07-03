@@ -3,24 +3,27 @@ import json
 import sys
 
 
-from .config import ProductionConfig, DevelopmentConfig, TestingConfig
-from .src import create_app
+def create_app_prod():
+    from .config import ProductionConfig
+    from .src import create_app
 
-def config_app(env=None):
-    if env is None:
-        try:
-            env = sys.argv[1]
-        except IndexError:
-            env = "dev"
+    app = create_app()
+
+    app.config.from_object(ProductionConfig)
+    with open("/etc/config.json", "r") as f:
+        config = json.loads(f.read())
+        app.config.from_object(config)
+
+    return app
+
+
+def create_app_dev(env=None):
+    from config import DevelopmentConfig, TestingConfig
+    from src import create_app
 
     app = create_app()
 
     match env:
-        case "prod":
-            app.config.from_object(ProductionConfig)
-            with open("/etc/config.json", "r") as f:
-                config = json.loads(f.read())
-                app.config.from_object(config)
         case "dev":
             app.config.from_object(DevelopmentConfig)  # Disables debug-level logging
         case "debug":
@@ -30,6 +33,12 @@ def config_app(env=None):
 
     return app
 
+
 if __name__ == "__main__":
-    app = config_app()
+    try:
+        env = sys.argv[1]
+    except IndexError:
+        env = "dev"
+
+    app = create_app_dev(env)
     app.run()

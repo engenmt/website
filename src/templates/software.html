@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Software{% endblock %}
+{% block content %}
+
+{% for software in my_software %}
+<article>
+    <div class="article-left">
+        <div class="article-title">{{ software['title'] }}</div>
+        <div class="article-authors">{{ software['authors'] }}</div>
+        <div class="article-abstract">{{ software['abstract'] }}</div>
+        <div class="article-footer">
+            <a href="{{ software['link'] }}">{{ software['link'] }}</a>
+        </div>
+    </div>
+    <div class="article-image">
+        <img src="{{ url_for('static', filename=software['image']) }}" alt="Alt text." />
+    </div>
+</article>
+{% endfor %}
+{% endblock %}

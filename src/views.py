@@ -36,4 +36,9 @@ def articles() -> str:
 
 @bp.route("/permpy")
 def perpy_view() -> str:
-    return render_template("permpy.html")
+    return render_template("permpy-repl.html")
+
+
+@bp.route("/enumerate")
+def perpy_enumerate() -> str:
+    return render_template("permpy-enumerate.html")

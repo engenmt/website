@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}PermPy{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+<py-env>
+- {{ url_for('static', filename='wheels/permpy_engenmt-0.0.12-py3-none-any.whl') }}
+</py-env>
+{% endblock %}
+
+{% block content %}
+Press Shift-Enter to evaluate a cell.
+<py-repl auto-generate="true">
+    import permpy
+</py-repl>
+
+{% endblock %}

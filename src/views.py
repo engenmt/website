@@ -32,3 +32,8 @@ def about() -> str:
 @bp.route("/articles")
 def articles() -> str:
     return render_template("base.html")
+
+
+@bp.route("/permpy")
+def perpy_view() -> str:
+    return render_template("permpy-repl.html")

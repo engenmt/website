@@ -1,6 +1,3 @@
-from js import document, console
-
-# from pyodide import create_proxy
 import permpy as pp
 
 
@@ -21,7 +18,3 @@ def get_and_enumerate(event):
     basis_str = ", ".join(f"{p}" for p in basis)
     output = f"Av({basis_str}) => {enumeration}"
     pyscript.write("output", output, append=True)
-
-
-# function_proxy = create_proxy(enumerate)
-# document.getElementById("button").addEventListener("click", function_proxy)

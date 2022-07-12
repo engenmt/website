@@ -5,16 +5,17 @@
 {{ super() }}
 <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
 <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-
 <py-env>
-- {{ url_for('static', filename=wheel_name') }}
+    - {{ url_for('static', filename=wheel_name) }}
 </py-env>
 {% endblock %}
 
 {% block content %}
-Press Shift-Enter to evaluate a cell.
-<py-repl auto-generate="true">
-    import permpy
-</py-repl>
+<label for="basis">Basis</label>
+<input id="basis" type="text"></input>
+<button id="enumerate" pys-onClick="get_and_enumerate">Enumerate</button>
+<label id="output"></label>
+
+<py-script src="{{ url_for('static', filename='scripts/enumerate.py') }}">
 
 {% endblock %}

@@ -35,5 +35,12 @@ def articles() -> str:
 
 
 @bp.route("/permpy")
-def perpy_view() -> str:
-    return render_template("permpy-repl.html")
+def permpy_view() -> str:
+    wheel_name = "wheels/permpy-0.2.1-py3-none-any.whl"
+    return render_template("permpy-repl.html", wheel_name=wheel_name)
+
+
+@bp.route("/enumerate")
+def permpy_enumerate() -> str:
+    wheel_name = "wheels/permpy-0.2.1-py3-none-any.whl"
+    return render_template("permpy-enumerate.html", wheel_name=wheel_name)

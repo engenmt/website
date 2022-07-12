@@ -7,14 +7,13 @@ def get_basis():
     return basis
 
 
-def enumerate(basis):
-    A = pp.Av(basis)
+def enumerate(A):
     return [len(S) for S in A]
 
 
 def get_and_enumerate(event):
     basis = get_basis()
-    enumeration = enumerate(basis)
-    basis_str = ", ".join(f"{p}" for p in basis)
-    output = f"Av({basis_str}) => {enumeration}"
+    A = pp.Av(basis)
+    enumeration = enumerate(A)
+    output = f"{A} => {enumeration}"
     pyscript.write("output", output, append=True)

@@ -1,19 +1,19 @@
 import permpy as pp
 
 
-def get_basis():
-    content = Element("basis").value
-    basis = [pp.Perm(p.strip()) for p in content.split(",")]
+def get_basis() -> list[pp.Permutation]:
+    content: str = Element("basis").value
+    basis: list[pp.Permutation] = [pp.Perm(p.strip()) for p in content.split(",")]
     return basis
 
 
-def enumerate(A):
+def enumerate(A: pp.PermClass) -> list[int]:
     return [len(S) for S in A]
 
 
-def get_and_enumerate(event):
-    basis = get_basis()
-    A = pp.Av(basis)
-    enumeration = enumerate(A)
-    output = f"{A} => {enumeration}"
+def get_and_enumerate(event) -> None:
+    basis: str = get_basis()
+    A: pp.AvClass = pp.Av(basis)
+    enumeration: list[int] = enumerate(A)
+    output: str = f"{A} => {enumeration}"
     pyscript.write("output", output, append=True)
